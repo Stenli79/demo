@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The project is a virtual wallet system built with [Laravel 7](https://laravel.com). 
+The project is a demo dashboard system built with [Laravel 7](https://laravel.com). 
 The features of this project include
 1. Registration and Authentication of users.
 2. Manage dashboard grid links
