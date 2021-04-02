@@ -1,0 +1,23 @@
+.btn-green{
+    color: #2dbe60 !important;
+}
+.btn-green i:hover{
+    color: #22b355 !important;
+}
+.btn-green.disabled i{
+    color: #dee3e4 !important;
+}
+.color-box{
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 1px solid #8d999c;
+}
+
+.header-green{
+    color: #2dbe60 !important;
+}
+
+.debug{
+    border: 1px solid lime;
+}
