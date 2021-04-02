@@ -37,7 +37,7 @@
                         <div class="card-header">
                             <h5 class="header-green">Select existing slot</h5><hr>
                             <div class="row justify-content-center">
-                                <div class="col-8">
+                                <div class="container-fluid col-xs-2 col-lg-8">
                                     <form id="form-update-slot" method="POST" action="{{ route('grid.update', ['id' => $slot_position]) }}">
                                         @csrf
                                         {{ method_field('PUT') }}
@@ -64,7 +64,7 @@
                         <div class="card-header">
                             <h5 class="header-green">Create new slot</h5><hr>
                             <div class="row justify-content-center">
-                                <div class="col-8">
+                                <div class="container-fluid col-xs-2 col-lg-8">
                                     <form id="form-create-slot" method="POST" action="{{ route('grid.create', ['id' => $slot_position]) }}">
                                         @csrf
                                         {{ method_field('PUT') }}

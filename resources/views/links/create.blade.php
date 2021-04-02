@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body container-fluid col-xs-2 col-lg-10">
 
                     @include('shared.messages')
 
