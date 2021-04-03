@@ -42,8 +42,6 @@ class GridController extends Controller
     }
 
     /**
-     * @todo Implement Js colorpicker
-     *
      * @return \Illuminate\View\View
      */
     public function edit( GridActionRequest $request )

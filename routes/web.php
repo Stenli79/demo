@@ -42,3 +42,14 @@ Route::group(['prefix' => 'links', 'namespace' => 'Link'], function () {
     Route::get('/{id}/move-down', 'LinkController@moveDown')->name('link.down')->where('id', '[0-9]+');
 });
 
+Route::resource('colors', 'Color\ColorController')->names([
+    'index'     => 'color.index',
+    'create'    => 'color.create',
+    'store'     => 'color.store',
+    'show'      => 'color.show',
+    'edit'      => 'color.edit',
+    'update'    => 'color.update',
+    'destroy'   => 'color.destroy'
+]);
+
+

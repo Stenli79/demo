@@ -9,6 +9,6 @@
                 </option>
             @endforeach
         </select>
-        <div class="input-group-prepend"> <span class="input-group-text">[colorpicker]</span> </div>
+        <div class="input-group-prepend"> <span class="input-group-text"></span> </div>
     </div>
 </div>

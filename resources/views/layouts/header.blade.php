@@ -22,7 +22,7 @@
                     <ul class="navbar-nav mr-auto font-weight-bold">
                         <li class="active"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
                         <li><a href="{{ route('link.index') }}">{{ __('Links') }}</a></li>
-{{--                        <li><a  href="{{ url('color.index') }}">{{ __('Colors') }}</a></li>--}}
+                        <li><a  href="{{ route('color.index') }}">{{ __('Colors') }}</a></li>
                     </ul>
                 </div>
             </nav>

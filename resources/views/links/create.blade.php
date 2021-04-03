@@ -41,9 +41,9 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="title">{{ __('messages.slots_form_title_label') }}</label>
+                                <label for="title">{{ __('messages.form_title_label') }}</label>
                                 <div class="input-group">
-                                    <input type="text" id="title" name="title" placeholder="{{ __('messages.slots_form_title_placeholder') }}" class="form-control">
+                                    <input type="text" id="title" name="title" placeholder="{{ __('messages.form_title_placeholder') }}" class="form-control">
                                 </div>
                             </div>
 

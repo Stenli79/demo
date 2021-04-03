@@ -43,8 +43,6 @@ class LinkController extends Controller
     /**
      * Display create form
      *
-     * @todo Implement Js colorpicker
-     *
      * @return \Illuminate\View\View
      */
     public function create()
@@ -73,8 +71,6 @@ class LinkController extends Controller
      * Display edit form for given slot
      *
      * @param LinkActionRequest $request
-     *
-     * @todo Implement Js colorpicker
      *
      * @return \Illuminate\View\View
      */

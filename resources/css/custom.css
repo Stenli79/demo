@@ -14,6 +14,12 @@
     border: 1px solid #8d999c;
 }
 
+input.color-input,
+input.form-control.color-input{
+    height: 50px;
+    padding: 5px;
+}
+
 .header-green{
     color: #2dbe60 !important;
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('messages.slots_edit_page_title'))
+@section('title', __('messages.color_edit_page_title'))
 
 @section('content')
 
@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-6 col-lg-8">{{ __('messages.slots_edit_header') }}</div>
+                        <div class="col-6 col-lg-8">{{ __('messages.color_edit_header') }}</div>
                         <div class="row justify-content-end col-6 col-lg-4 no-gutters">
                             <a href="{{ route('home') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.icon_home_label') }}">
                                 <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
@@ -21,7 +21,7 @@
                                     <i class="fas fa-home fa-sm d-sm-none"></i>
                                 </span>
                             </a>
-                            <a href="{{ route('link.index') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.slot_list_back_icon_label') }}">
+                            <a href="{{ route('color.index') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.color_list_back_icon_label') }}">
                                 <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
                                     <i class="fas fa-th-list fa-lg d-none d-sm-block"></i>
                                     <i class="fas fa-th-list fa-sm d-sm-none"></i>
@@ -37,35 +37,19 @@
                     <!-- Links Edit
                     =============================== -->
 
-                        <form id="form-edit-link" method="POST" action="{{ route('link.update', ['id' => $link->id]) }}">
+                        <form id="form-edit-link" method="POST" action="{{ route('color.update', ['color' => $color->id]) }}">
                             @csrf
                             {{ method_field('PUT') }}
 
                             <div class="form-group">
                                 <label for="title">{{ __('messages.form_title_label') }}</label>
                                 <div class="input-group">
-                                    <input type="text" id="title" name="title" placeholder="{{ __('messages.form_title_placeholder') }}" value="{{ $link->title }}" class="form-control">
+                                    <input type="text" id="title" name="title" placeholder="{{ __('messages.form_title_placeholder') }}" value="{{ $color->title }}" class="form-control">
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="link">{{ __('messages.slots_form_link_label') }}</label>
-                                <div class="input-group">
-                                    <textarea id="link" name="link" placeholder="{{ __('messages.slots_form_link_placeholder') }}" class="form-control">{{ $link->link }}</textarea>
-                                </div>
-                            </div>
-
-                            @include('shared.color-dropdown', ['colors' => $colors, 'selected' => $link->color])
-
-                            <div class="form-group">
-                                <label for="sequence">{{ __('messages.slots_form_sequence_label') }}</label>
-                                <div class="input-group">
-                                    <input type="number" id="sequence" name="sequence" placeholder="{{ __('messages.slots_form_sequence_placeholder') }}" value="{{ $link->sequence }}" class="form-control" min="1">
-                                </div>
-                            </div>
-
+                            @include('shared.color-picker', ['value' => $color->color_hex])
                             <hr>
-
                             <button id="continue-btn" class="btn btn-primary btn-block">{{ __('messages.continue_button') }}</button>
                         </form>
 
