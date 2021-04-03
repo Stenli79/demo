@@ -15,7 +15,7 @@ class AddForeignKeysToGridTable extends Migration
 	{
 		Schema::table('grid', function(Blueprint $table)
 		{
-			$table->foreign('link_id', 'links_ibfk_1')->references('id')->on('links')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('link_id', 'links_ibfk_1')->references('id')->on('links')->onUpdate('CASCADE')->onDelete('SET NULL');
 		});
 	}
 
