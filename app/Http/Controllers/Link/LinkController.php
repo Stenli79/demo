@@ -60,7 +60,7 @@ class LinkController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(LinkStoreRequest $request )
+    public function store( LinkStoreRequest $request )
     {
         $this->linkModel->firstOrCreate($request->validated());
 

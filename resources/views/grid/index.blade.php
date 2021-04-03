@@ -11,13 +11,6 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-11">{{ __('messages.dashboard_header') }}</div>
-                        <div class="col-1">
-                            <a href="{{ route('link.index') }}" data-toggle="tooltip" data-original-title="{{ __('messages.edit_link_list_icon_label') }}">
-                                <span class="btn-green text-8 mt-1 mb-1 fa-pull-right">
-                                    <i class="fas fa-pen-square"></i>
-                                </span>
-                            </a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
