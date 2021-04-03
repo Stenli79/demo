@@ -30,7 +30,7 @@ class GridUpdateRequest extends FormRequest
     {
         return [
             'id' => 'required|integer|exists:grid,id',
-            'link_id' => 'required|integer|exists:link,id',
+            'link_id' => 'required|integer|exists:links,id',
         ];
 
     }
