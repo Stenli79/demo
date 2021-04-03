@@ -18,7 +18,7 @@ class CreateLinksTable extends Migration
             $table->integer('id', true);
             $table->char('color', 7)->default('');
             $table->string('title', 150)->default('');
-            $table->text('link')->default('');
+            $table->text('link');
             $table->integer('sequence');
             $table->timestamps();
 		});
