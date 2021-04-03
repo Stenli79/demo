@@ -8,11 +8,12 @@ return [
     'add_button' => 'Add',
     'continue_button' => 'Continue',
     'icon_home_label' => 'Home',
-    'icon_delete_label' => 'Delete',
-    'icon_clear_label' => 'Clear',
+    'icon_unlink_label' => 'Unlink',
+    'icon_link_label' => 'Link',
     'icon_add_label' => 'Add',
     'slot_add_icon_label' => 'Add',
-    'slot_list_back_icon_label' => 'Go to slot list',
+    'slot_list_back_icon_label' => 'Go to link list',
+    'edit_link_list_icon_label' => 'Edit link list',
     'form_select_option' => '-- select --',
 
     //TODO Flash Messages
@@ -21,6 +22,8 @@ return [
     //Slot Fill
     'slots_fill_page_title' => 'Fill Slot',
     'slots_fill_header' => 'Fill Slot',
+    'fill_existing_link_header' => 'Select from existing link',
+    'fill_create_link_header' => 'Create new link',
 
     //Slot List
     'slots_page_title' => 'Slots',

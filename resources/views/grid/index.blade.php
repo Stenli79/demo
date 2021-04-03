@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-11">{{ __('messages.dashboard_header') }}</div>
                         <div class="col-1">
-                            <a href="{{ route('link.index') }}">
+                            <a href="{{ route('link.index') }}" data-toggle="tooltip" data-original-title="{{ __('messages.edit_link_list_icon_label') }}">
                                 <span class="btn-green text-8 mt-1 mb-1 fa-pull-right">
                                     <i class="fas fa-pen-square"></i>
                                 </span>
@@ -34,11 +34,11 @@
 
                                     @if( empty($item->links and $item->links->link) )
                                         <div class="contener text-right">
-                                            <a href="{{ route('grid.edit', ['id' => $item->id]) }}" class="btn-green text-2 p-1" data-toggle="tooltip" data-original-title="{{ __('messages.icon_add_label') }}">
-                                                <i class="fas fa-plus"></i>
+                                            <a href="{{ route('grid.edit', ['id' => $item->id]) }}" class="btn-green text-4 p-1" data-toggle="tooltip" data-original-title="{{ __('messages.icon_link_label') }}">
+                                                <i class="fas fa-link"></i>
                                             </a>
                                         </div>
-                                        <p class="mb-0">&nbsp;</p>
+                                        <p class="mb-2">&nbsp;</p>
                                         <button
                                             class="btn btn-secondary btn-block link-btn"
                                             data-href="{{ route('grid.edit', ['id' => $item->id]) }}"
@@ -46,11 +46,11 @@
                                         >{{ __('messages.add_button') }}</button>
                                     @else
                                         <div class="contener text-right">
-                                            <a href="{{ route('grid.clear', ['id' => $item->id]) }}" class="btn-green text-4 p-1" data-toggle="tooltip" data-original-title="{{ __('messages.icon_clear_label') }}">
-                                                <i class="fas fa-trash"></i>
+                                            <a href="{{ route('grid.clear', ['id' => $item->id]) }}" class="btn-green text-4 p-1" data-toggle="tooltip" data-original-title="{{ __('messages.icon_unlink_label') }}">
+                                                <i class="fas fa-unlink"></i>
                                             </a>
                                         </div>
-                                        <p class="mb-0">{{ $item->links->title }}&nbsp;</p>
+                                        <p class="mb-2">{{ $item->links->title }}&nbsp;</p>
                                         <button
                                             class="btn btn-secondary btn-block link-btn"
                                             style="background-color: {{ $item->links->color }}; border-color: {{ $item->links->color }};"

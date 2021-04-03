@@ -13,19 +13,18 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-
                     <div class="row">
                         <div class="col-6 col-lg-8">{{ __('messages.slots_header') }}</div>
                         <div class="row justify-content-end col-6 col-lg-4 no-gutters">
-                            <a href="{{ route('home') }}" class="col-3 col-md-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.icon_home_label') }}">
+                            <a href="{{ route('home') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.icon_home_label') }}">
                                 <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
-                                    <i class="fas fa-home d-none d-sm-block"></i>
+                                    <i class="fas fa-home fa-lg d-none d-sm-block"></i>
                                     <i class="fas fa-home fa-sm d-sm-none"></i>
                                 </span>
                             </a>
-                            <a href="{{ route('link.create') }}" class="col-3 col-md-1  ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.slot_add_icon_label') }}">
+                            <a href="{{ route('link.create') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.slot_add_icon_label') }}">
                                 <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
-                                    <i class="fas fa-plus-square d-none d-sm-block"></i>
+                                    <i class="fas fa-plus-square fa-lg d-none d-sm-block"></i>
                                     <i class="fas fa-plus-square fa-sm d-sm-none"></i>
                                 </span>
                             </a>
@@ -42,7 +41,6 @@
                         <table class="table table-striped table-hover table-sm">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">{{ __('messages.slot_table_color_header') }}</th>
                                     <th scope="col">{{ __('messages.slot_table_title_header') }}</th>
                                     <th scope="col">{{ __('messages.slot_table_href_header') }}</th>
@@ -53,9 +51,8 @@
                             <tbody>
                                 @foreach($links as $link)
                                     <tr>
-                                        <th scope="row">{{ $link->id }}</th>
-                                        <td>
-                                            <span class="color-box" style="background-color: {{ $link->color }};">&nbsp;</span>
+                                        <td class="">
+                                            <span class="color-box ml-2" style="background-color: {{ $link->color }};">&nbsp;</span>
                                         </td>
                                         <td>{{ $link->title }}</td>
                                         <td>{{ $link->link }}</td>

@@ -13,16 +13,18 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-10">{{ __('messages.slots_fill_header') }}</div>
-                        <div class="row justify-content-end col-2">
+                        <div class="col-6 col-lg-8">{{ __('messages.slots_edit_header') }}</div>
+                        <div class="row justify-content-end col-6 col-lg-4 no-gutters">
                             <a href="{{ route('home') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.icon_home_label') }}">
-                                <span class="btn-green text-8 mt-1 mb-1 fa-pull-right">
-                                    <i class="fas fa-home"></i>
+                                <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
+                                    <i class="fas fa-home fa-lg d-none d-sm-block"></i>
+                                    <i class="fas fa-home fa-sm d-sm-none"></i>
                                 </span>
                             </a>
                             <a href="{{ route('link.index') }}" class="col-1 ml-3" data-toggle="tooltip" data-original-title="{{ __('messages.slot_list_back_icon_label') }}">
-                                <span class="btn-green text-8 mt-1 mb-1 fa-pull-right">
-                                    <i class="fas fa-th-list"></i>
+                                <span class="btn-green text-6 mt-1 mb-1 fa-pull-right">
+                                    <i class="fas fa-th-list fa-lg d-none d-sm-block"></i>
+                                    <i class="fas fa-th-list fa-sm d-sm-none"></i>
                                 </span>
                             </a>
                         </div>
@@ -35,7 +37,7 @@
                     <!-- Slots Edit
                     =============================== -->
                         <div class="card-header">
-                            <h5 class="header-green">Select existing slot</h5><hr>
+                            <h5 class="header-green">{{ __('messages.fill_existing_link_header') }}</h5><hr>
                             <div class="row justify-content-center">
                                 <div class="container-fluid col-xs-2 col-lg-8">
                                     <form id="form-update-slot" method="POST" action="{{ route('grid.update', ['id' => $slot_position]) }}">
@@ -62,7 +64,7 @@
                         </div>
                         <hr>
                         <div class="card-header">
-                            <h5 class="header-green">Create new slot</h5><hr>
+                            <h5 class="header-green">{{ __('messages.fill_create_link_header') }}</h5><hr>
                             <div class="row justify-content-center">
                                 <div class="container-fluid col-xs-2 col-lg-8">
                                     <form id="form-create-slot" method="POST" action="{{ route('grid.create', ['id' => $slot_position]) }}">
