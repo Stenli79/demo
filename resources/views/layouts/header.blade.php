@@ -20,8 +20,8 @@
             <nav class="primary-menu navbar navbar-expand-lg">
                 <div id="header-nav" class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto font-weight-bold">
-                        <li class="active"><a href="{{ url('home') }}">{{ __('Home') }}</a></li>
-                        <li><a href="{{ url('link.index') }}">{{ __('Links') }}</a></li>
+                        <li class="active"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
+                        <li><a href="{{ route('link.index') }}">{{ __('Links') }}</a></li>
 {{--                        <li><a  href="{{ url('color.index') }}">{{ __('Colors') }}</a></li>--}}
                     </ul>
                 </div>
