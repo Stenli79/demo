@@ -38,7 +38,7 @@ class Link extends Model
      */
     public function grids()
     {
-        return $this->hasMany('App\Grid', 'link_id');
+        return $this->hasMany('App\Models\Grid', 'link_id');
     }
 
     /**

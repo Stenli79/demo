@@ -27,7 +27,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $keyType = 'integer';
+    protected $keyType = 'int';
 
     /**
      * @var string[]
