@@ -34,7 +34,8 @@ class ColorController extends Controller
      */
     public function index()
     {
-        $colors  = $this->colorModel->paginate( self::COLORS_PEAR_PAGE );
+        //$colors  = $this->colorModel->paginate( self::COLORS_PEAR_PAGE );
+        $colors  = $this->colorModel->paginate( 3 );
 
         return view('colors.index', ['colors' => $colors]);
     }
