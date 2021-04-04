@@ -54,15 +54,15 @@
                                         </td>
                                         <td>{{ $color->title }}</td>
                                         <td class="d-flex">
-                                            <a href="{{ route('color.edit', ['color' => $color->id]) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_edit_action_label') }}">
+                                            <a href="{{ route('color.edit', ['id' => $color->id]) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_edit_action_label') }}">
                                                 <i class="fas fa-pen d-none d-sm-block"></i>
                                                 <i class="fas fa-pen fa-sm d-sm-none"></i>
                                             </a>
-                                            <form id="form-destroy-slot" method="POST" action="{{ route('color.destroy', array_merge(\Request::query(), ['color' => $color->id])) }}">
+                                            <form id="form-destroy-slot" method="POST" action="{{ route('color.destroy', array_merge(\Request::query(), ['id' => $color->id])) }}">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
                                             </form>
-                                            <a href="{{ route('color.destroy', array_merge(\Request::query(), ['color' => $color->id])) }}" class="btn-green text-6 ml-1 ml-sm-2 submit-previous-form" data-toggle="tooltip" data-original-title="{{ __('messages.table_destroy_action_label') }}">
+                                            <a href="{{ route('color.destroy', array_merge(\Request::query(), ['id' => $color->id])) }}" class="btn-green text-6 ml-1 ml-sm-2 submit-previous-form" data-toggle="tooltip" data-original-title="{{ __('messages.table_destroy_action_label') }}">
                                                 <i class="fas fa-trash d-none d-sm-block"></i>
                                                 <i class="fas fa-trash fa-sm d-sm-none"></i>
                                             </a>

@@ -42,15 +42,13 @@ Route::group(['prefix' => 'links', 'namespace' => 'Link'], function () {
     Route::get('/{id}/move-down', 'LinkController@moveDown')->name('link.down')->where('id', '[0-9]+');
 });
 
-Route::resource('colors', 'Color\ColorController')->names([
-    'index'     => 'color.index',
-    'create'    => 'color.create',
-    'store'     => 'color.store',
-    'show'      => 'color.show',
-    'edit'      => 'color.edit',
-    'update'    => 'color.update',
-    'destroy'   => 'color.destroy'
-])->parameters([
-    'color' => 'id'
-]);
+Route::group(['prefix' => 'colors', 'namespace' => 'Color'], function () {
+    Route::get('/', 'ColorController@index')->name('color.index');
+    Route::get('/create', 'ColorController@create')->name('color.create');
+    Route::post('/store', 'ColorController@store')->name('color.store');
+    Route::get('/{id}/edit', 'ColorController@edit')->name('color.edit')->where('id', '[0-9]+');
+    Route::put('/{id}/update', 'ColorController@update')->name('color.update')->where('id', '[0-9]+');
+    Route::delete('/{id}/destroy', 'ColorController@destroy')->name('color.destroy')->where('id', '[0-9]+');
+});
+
 

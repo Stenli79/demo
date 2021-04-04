@@ -64,18 +64,6 @@ class ColorController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function show( int $id )
-    {
-        return redirect()->route('color.edit', ['color'=>$id]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -101,7 +89,7 @@ class ColorController extends Controller
     {
         $this->colorModel->findOrFail($id)->update($request->validated());
 
-        return redirect()->route('color.edit', ['color'=>$id])->withSuccess('Record has been created successfully');
+        return redirect()->route('color.edit', ['id'=>$id])->withSuccess('Record has been created successfully');
     }
 
     /**

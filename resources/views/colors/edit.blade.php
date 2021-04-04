@@ -37,7 +37,7 @@
                     <!-- Links Edit
                     =============================== -->
 
-                        <form id="form-edit-color" method="POST" action="{{ route('color.update', ['color' => $color->id]) }}">
+                        <form id="form-edit-color" method="POST" action="{{ route('color.update', ['id' => $color->id]) }}">
                             @csrf
                             {{ method_field('PUT') }}
 
