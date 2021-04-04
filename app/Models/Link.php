@@ -54,24 +54,6 @@ class Link extends Model
     }
 
     /**
-     * @return Link[]|\Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllLinks()
-    {
-        return $this->orderBy('sequence')->get();
-    }
-
-    /**
-     * @param int $perPage
-     *
-     * @return Link[]|\Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllLinksPaginated($perPage = 10 )
-    {
-        return $this->orderBy('sequence')->paginate( $perPage );
-    }
-
-    /**
      * Move link one position up
      *
      * @param int $id

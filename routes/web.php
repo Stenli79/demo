@@ -50,6 +50,7 @@ Route::resource('colors', 'Color\ColorController')->names([
     'edit'      => 'color.edit',
     'update'    => 'color.update',
     'destroy'   => 'color.destroy'
+])->parameters([
+    'color' => 'id'
 ]);
-
 

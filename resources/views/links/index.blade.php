@@ -58,11 +58,11 @@
                                         <td>{{ $link->link }}</td>
                                         <td class="d-none d-sm-table-cell">{{ $link->sequence }}</td>
                                         <td class="d-flex">
-                                            <a href="{{ route('link.up', ['id' => $link->id]) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_moveup_action_label') }}">
+                                            <a href="{{ route('link.up', array_merge(\Request::query(), ['id' => $link->id])) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_moveup_action_label') }}">
                                                 <i class="fas fa-arrow-circle-up d-none d-sm-block"></i>
                                                 <i class="fas fa-arrow-circle-up fa-sm d-sm-none"></i>
                                             </a>
-                                            <a href="{{ route('link.down', ['id' => $link->id]) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_movedown_action_label') }}">
+                                            <a href="{{ route('link.down', array_merge(\Request::query(), ['id' => $link->id])) }}" class="btn-green text-6 ml-1 ml-sm-2" data-toggle="tooltip" data-original-title="{{ __('messages.table_movedown_action_label') }}">
                                                 <i class="fas fa-arrow-circle-down d-none d-sm-block"></i>
                                                 <i class="fas fa-arrow-circle-down fa-sm d-sm-none"></i>
                                             </a>
@@ -74,7 +74,7 @@
                                                 @csrf
                                                 {{ method_field('DELETE') }}
                                             </form>
-                                            <a href="{{ route('link.destroy', ['id' => $link->id]) }}" class="btn-green text-6 ml-1 ml-sm-2 submit-previous-form" data-toggle="tooltip" data-original-title="{{ __('messages.table_destroy_action_label') }}">
+                                            <a href="{{ route('link.destroy', array_merge(\Request::query(), ['id' => $link->id])) }}" class="btn-green text-6 ml-1 ml-sm-2 submit-previous-form" data-toggle="tooltip" data-original-title="{{ __('messages.table_destroy_action_label') }}">
                                                 <i class="fas fa-trash d-none d-sm-block"></i>
                                                 <i class="fas fa-trash fa-sm d-sm-none"></i>
                                             </a>

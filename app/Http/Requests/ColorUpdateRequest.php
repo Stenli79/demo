@@ -18,7 +18,7 @@ class ColorUpdateRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->merge(['id' => $this->route('id')]);
+        $this->merge(['id' => $this->route('color')]);
     }
 
     /**

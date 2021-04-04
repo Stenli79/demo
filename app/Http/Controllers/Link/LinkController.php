@@ -35,7 +35,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $links  = $this->linkModel->getAllLinksPaginated( self::LINKS_PEAR_PAGE );
+        $links  = $this->linkModel->orderBy('sequence')->paginate( self::LINKS_PEAR_PAGE );
 
         return view('links.index', ['links' => $links]);
     }
@@ -54,7 +54,7 @@ class LinkController extends Controller
     }
 
     /**
-     * Create new slot
+     * Create new link
      *
      * @param LinkStoreRequest $request
      *
@@ -68,7 +68,7 @@ class LinkController extends Controller
     }
 
     /**
-     * Display edit form for given slot
+     * Display edit form for given link
      *
      * @param LinkActionRequest $request
      *
@@ -85,7 +85,7 @@ class LinkController extends Controller
     }
 
     /**
-     * Update data for given slot
+     * Update data for given link
      *
      * @param int $id
      * @param LinkUpdateRequest $request
@@ -100,7 +100,7 @@ class LinkController extends Controller
     }
 
     /**
-     * Delete slot
+     * Delete link
      *
      * @param LinkActionRequest $request
      *
@@ -114,11 +114,11 @@ class LinkController extends Controller
 
         $this->linkModel->getLinkById( $validated['id'] )->delete();
 
-        return redirect()->route('link.index')->withSuccess('Record has been removed successfully');
+        return redirect()->route('link.index', ['page'=> $request->page])->withSuccess('Record has been removed successfully');
     }
 
     /**
-     * Move slot one position up
+     * Move link one position up
      *
      * @param LinkActionRequest $requests
      *
@@ -130,11 +130,11 @@ class LinkController extends Controller
 
         $this->linkModel->moveUp( $validated['id'] );
 
-        return redirect()->route('link.index')->withSuccess('Item is moved up');
+        return redirect()->route('link.index', ['page'=> $request->page])->withSuccess('Item is moved up');
     }
 
     /**
-     * Move slot one position down
+     * Move link one position down
      *
      * @param LinkActionRequest $request
      *
@@ -146,6 +146,6 @@ class LinkController extends Controller
 
         $this->linkModel->moveDown( $validated['id'] );
 
-        return redirect()->route('link.index')->withSuccess('Item is moved down');
+        return redirect()->route('link.index', ['page'=> $request->page])->withSuccess('Item is moved down');
     }
 }

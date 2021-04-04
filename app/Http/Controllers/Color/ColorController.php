@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ColorStoreRequest;
 use App\Http\Requests\ColorUpdateRequest;
 use App\Models\Color;
+use Illuminate\Http\Request;
 
 class ColorController extends Controller
 {
@@ -59,7 +60,7 @@ class ColorController extends Controller
     {
         $this->colorModel->firstOrCreate($request->validated());
 
-        return redirect()->route('color.index')->withSuccess('Record has been created successfully');
+        return redirect()->route('color.index', ['page'=> $request->page])->withSuccess('Record has been created successfully');
     }
 
     /**
@@ -110,10 +111,10 @@ class ColorController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy( int $id )
+    public function destroy( int $id, Request $request )
     {
         $this->colorModel->findOrFail( $id )->delete();
 
-        return redirect()->route('color.index')->withSuccess('Record has been removed successfully');
+        return redirect()->route('color.index', ['page'=> $request->page])->withSuccess('Record has been removed successfully');
     }
 }
