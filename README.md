@@ -1,4 +1,4 @@
-# Shkolo Demo Dashboard
+# Demo Dashboard
 
 ## Project Description
 
@@ -9,7 +9,7 @@ The features of this project include
 3. Manage links with CRUD.
 4. Email notification after registration - This features is disabled for fastest registration.
 
-## Project Setup(Web Portal)
+## Project Setup
 
 ### Cloning the GitHub Repository.
 
@@ -60,7 +60,8 @@ While still in the project root directory via terminal, run the following comman
 ```bash
 npm install
 ```
-### Generate mixing
+
+### Generate mixing and assets
 ```bash
 npm run dev
 ```
@@ -81,6 +82,46 @@ or run database migration and seed
 ```bash
 php artisan migrate:refresh --seed
 ```
+
+## Testing
+
+### Create a copy of your .env.testing file
+
+Run the following command
+
+```bash
+cp .env.testing.example .env.testing
+```
+
+### Generate an app encryption key
+
+Run the following command
+
+```bash
+php artisan key:generate --env=testing
+```
+
+### Setup test database
+
+Run the following commands
+
+```bash
+touch database/test.sqlite
+```  
+
+### Migrate the test database with seeds
+
+Run the following commands
+
+```bash
+php artisan migrate:fresh --seed --env=testing
+```  
+
+### Run tests
+
+```bash
+./vendor/bin/phpunit
+``` 
 
 ## Usage
 		
